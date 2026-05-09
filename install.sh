@@ -7,7 +7,7 @@
 set -euo pipefail
 
 # === Configuration ===
-DOTFILES="$HOME/dotfiles"
+DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 BACKUP_DIR="$HOME/.dotfiles-backup-$(date +%Y%m%d-%H%M%S)"
 SCRIPTS_DIR="$HOME/Scripts"
 LAUNCHD_DIR="$HOME/Library/LaunchAgents"
@@ -30,7 +30,7 @@ create_symlink() {
     local source="$1"
     local target="$2"
     backup_if_real "$target"
-    ln -sf "$source" "$target"
+    ln -sf "$(realpath "$source")" "$target"
     log "Linked: $target -> $source"
 }
 

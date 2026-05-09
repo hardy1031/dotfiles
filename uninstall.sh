@@ -6,7 +6,7 @@
 
 set -euo pipefail
 
-DOTFILES="$HOME/dotfiles"
+DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 SCRIPTS_DIR="$HOME/Scripts"
 LAUNCHD_DIR="$HOME/Library/LaunchAgents"
 
