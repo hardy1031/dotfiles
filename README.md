@@ -33,30 +33,30 @@ Manual-trigger shortcuts via Raycast (one-keystroke workflows).
 ## Setup
 
 ```bash
-# 1. Clone
-git clone https://github.com/YOUR_USERNAME/dotfiles.git ~/dotfiles
+# 1. Clone (好きなディレクトリでOK、install.sh はどこに置いても動く)
+git clone git@github.com:hardy1031/dotfiles.git ~/General/PersonalLab/dotfiles
+# 別の場所でも可: git clone git@github.com:hardy1031/dotfiles.git ~/dotfiles
 
 # 2. Install Python dependencies
-pip3 install -r ~/dotfiles/scripts/mail-imap/requirements.txt
+pip3 install -r <repo>/scripts/mail-imap/requirements.txt
 
 # 3. Configure credentials
-cp ~/dotfiles/scripts/mail-imap/.env.example \
-   ~/dotfiles/scripts/mail-imap/.env
-vim ~/dotfiles/scripts/mail-imap/.env
+cp <repo>/scripts/mail-imap/.env.example <repo>/scripts/mail-imap/.env
+vim <repo>/scripts/mail-imap/.env
 
 # 4. Run install
-cd ~/dotfiles
+cd <repo>
 ./install.sh
 
-# 5. Manual: set Raycast script directory to ~/dotfiles/raycast
+# 5. Manual: set Raycast script directory to <repo>/raycast
 ```
 
 ## Daily workflow
 
-Edit any file in `~/dotfiles/`, changes are reflected immediately via symlinks.
+Edit any file in the repo, changes are reflected immediately via symlinks.
 
 ```bash
-cd ~/dotfiles
+cd <repo>
 vim scripts/mail-imap/cleanup.py
 # test, then commit
 git add . && git commit -m "..." && git push
