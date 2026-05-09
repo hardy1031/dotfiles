@@ -1,0 +1,23 @@
+# Credentials - 絶対に commit しない
+**/.env
+**/.env.local
+**/*.secret
+
+# Logs - runtime に生成される
+**/logs/*
+!**/logs/.gitkeep
+
+# macOS system files
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Backup files
+*.backup
+*.bak
